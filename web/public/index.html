@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="slider.js"></script>
+
+  <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="bootstrap.min.css">
+
+   <title>WebLight</title>
+</head>
+
+<body>
+
+
+
+<div class="container">
+  <h1>Light Controller</h1>
+  <div class="row">
+    <div class="col">
+  <form id="lightform" action="/state" method="post">
+    Colour<br>
+
+    R:
+    <input id="r" type="range" name="red" min="0" max="1023" value="1023">
+    <output for="r" id="r_out" hidden="true" style="padding: 2px 5px">1023</output><br>
+
+    G:
+    <input id="g" type="range" name="green" min="0" max="1023" value="1023">
+    <output for="g" id="g_out" hidden="true" style="padding: 2px 5px">1023</output><br>
+
+    B:
+    <input id="b" type="range" name="blue" min="0" max="1023" value="1023">
+    <output for="b" id="b_out" hidden="true" style="padding: 2px 5px">1023</output><br>
+
+  </form>
+  </div>
+  <div class="col">
+    <!-- Put sample colour square here -->
+    <div id="sample" style="width:10em;height:10em;background:rgba(255,255,255,0.8)"></div>
+  </div>
+</div>
+  <form id="lightsout" action="/state" method="post">
+    <input type="hidden" name="lights_off" value="off">
+  </form>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <button class="btn btn-primary" type="submit" form="lightform" value="Set Lights">Set Lights</button>
+      <button class="btn btn-danger" type="submit" form="lightsout" value="Lights Out">Lights Out</button>
+
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
